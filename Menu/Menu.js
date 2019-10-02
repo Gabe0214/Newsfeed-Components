@@ -67,11 +67,35 @@ function menuComponent(arry){
   // event click
 
   menuButton.addEventListener('click', (e) => {
+    
     menu.classList.toggle('menu--open');
+ 
+    
+    
+     
+   
+   
+    
   })
+
+
+  //jquery
+  // $(document).ready(function(){
+  //   $('.menu-button').click(function() {
+  //     $('.menu').fadeIn(); 
+  //     $('.menu-button').click(function() {
+  //       $('.menu').fadeOut();
+  //     })
+      
+  //   })
+  //  });
+
 
  return menu;
 }
+
+// stretch jquery 
+
 
 
 
