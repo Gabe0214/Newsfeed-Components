@@ -112,3 +112,72 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+function createArticle(title, date, firstP, secondP, thirdP) {
+  // elements
+const article = document.createElement('div');
+const articleHeading = document.createElement('h2');
+const articleDate = document.createElement('p');
+const articleFirstP = document.createElement('p');
+const articleSecondP = document.createElement('p');
+const articleThirdP = document.createElement('p'); 
+const buttonSpan = document.createElement('span');
+
+// class assign
+
+article.classList.add('article');
+articleDate.classList.add('date'); 
+buttonSpan.classList.add('expandButton'); 
+
+// append 
+
+article.appendChild(articleHeading);
+article.appendChild(articleDate);
+article.appendChild(articleFirstP);
+article.appendChild(articleSecondP);
+article.appendChild(articleThirdP);
+article.appendChild(buttonSpan);
+
+// text content 
+
+
+articleHeading.textContent = title;
+articleDate.textContent = date;
+articleFirstP.textContent = firstP;
+articleSecondP.textContent = secondP;
+articleThirdP.text = thirdP; 
+buttonSpan.textContent = 'click here';
+
+
+
+// style 
+buttonSpan.style.color = '#2B900D';
+
+//toggle button
+buttonSpan.addEventListener('click', (e) => {
+  console.log('button clicked'); 
+  article.classList.toggle('article-open');
+
+
+})
+
+return article; 
+
+
+}
+
+const articleParent = document.querySelector('.articles');
+
+data.push({
+  title: 'Test Title',
+  date: 'October 2',
+  firstParagraph: 'testingadsjdhadhjhdkahdkdhsadasdsadadadadasdsadasdasdad',
+  secondParagraph: 'adsfkadsaldjaldjaldjaslkdjladjldjaldjsaldjas',
+  thirdParagraph: 'adjakjdsahdahdahdaskhdkadadasdadadadadsadasd'
+})
+
+data.map((value) => {
+  articleParent.appendChild(createArticle(value.title, value.date, value.firstParagraph, value.secondParagraph, value.thirdParagraph));
+  });
+  
